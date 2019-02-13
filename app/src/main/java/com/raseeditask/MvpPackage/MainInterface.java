@@ -6,6 +6,10 @@ import java.util.List;
 
 public interface MainInterface {
 
+    interface MainView{
+        void setDataToRecyclerView(List<Ads> adsList);
+    }
+
     interface Presenter{
         void FetchDataFromServer();
     }

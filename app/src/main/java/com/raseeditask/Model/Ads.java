@@ -1,9 +1,11 @@
 package com.raseeditask.Model;
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Ads {
+public class Ads  implements Comparable{
     @SerializedName("picture")
     @Expose
     private String picture;
@@ -91,5 +93,12 @@ public class Ads {
 
     public void setOrder(Integer order) {
         this.order = order;
+    }
+
+    @Override
+    public int compareTo(@NonNull Object o) {
+        int compareTo=((Ads )o).getOrder();
+
+        return this.order-compareTo;
     }
 }

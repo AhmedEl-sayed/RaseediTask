@@ -7,6 +7,7 @@ import com.raseeditask.Model.Ads;
 import com.raseeditask.MyInterface.InterfaceRetrofit;
 import com.raseeditask.Network.RetrofitInstance;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -23,8 +24,10 @@ public class getNoticeResponseImp implements MainInterface.getNoticeResponse {
         call.enqueue(new Callback<List<Ads>>() {
             @Override
             public void onResponse(Call<List<Ads>> call, Response<List<Ads>> response) {
+
                 onFinishedListner.onFinished(response.body());
-                Log.v("MinInterface","Sucssssful");
+                Log.v("MinInterface","Sucssssful"+response.body());
+
             }
 
             @Override
